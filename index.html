@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Food Facts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+            color: #34495e;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Food Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Honey Never Spoils",
+                "description": "Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible."
+            },
+            {
+                "fact": "Bananas are Berries",
+                "description": "Botanically speaking, bananas are classified as berries, while strawberries are not. This is due to the way they develop from the flower's ovary."
+            },
+            {
+                "fact": "Chocolate was Once Used as Currency",
+                "description": "The ancient Aztecs used cacao beans as a form of currency, and they also made a drink from chocolate that was reserved for nobility."
+            },
+            {
+                "fact": "Pineapples Take Two Years to Grow",
+                "description": "It takes about two years for a pineapple plant to produce a single pineapple."
+            },
+            {
+                "fact": "Carrots Were Originally Purple",
+                "description": "The first cultivated carrots were purple or yellow. The orange carrot we know today was developed in the Netherlands in the 17th century."
+            },
+            {
+                "fact": "Apples Float",
+                "description": "Apples are 25% air, which is why they float in water. This is also why they are often used in bobbing games."
+            },
+            {
+                "fact": "Potatoes Were the First Food Grown in Space",
+                "description": "In 1995, NASA sent potato seeds to space as part of an experiment to see if they could be grown in microgravity."
+            },
+            {
+                "fact": "Ketchup was Once Sold as Medicine",
+                "description": "In the 1830s, ketchup was sold as a cure for indigestion and other ailments."
+            },
+            {
+                "fact": "The World's Most Expensive Coffee",
+                "description": "Kopi Luwak, made from coffee beans that have been eaten and excreted by civet cats, can cost up to $600 per pound."
+            },
+            {
+                "fact": "Watermelon is 92% Water",
+                "description": "This makes it a great hydrating snack, especially during hot summer months."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            document.getElementById('fact').innerText = `${randomFact.fact}: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
